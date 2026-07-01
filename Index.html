@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Simple Website</title>
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            background-color: #f4f4f4;
+        }
+
+        /* Header Styling */
+        header {
+            background-color: #333;
+            padding: 15px;
+            display: flex;
+            justify-content: center; /* Button ko center me karne ke liye */
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .menu-btn {
+            background-color: #ff4757;
+            color: white;
+            padding: 10px 25px;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+
+        .menu-btn:hover {
+            background-color: #e84118;
+        }
+
+        /* Body (Gallery) Styling */
+        main {
+            flex: 1;
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .image-grid {
+            display: Full Image;
+            grid-template-columns: repeat(auto-fit, minmax(800px, 1fr));
+            gap: 5px;
+        }
+ .image-grid {
+            display: Full Image;
+            grid-template-columns: repeat(auto-fit, minmax(800px, 1fr));
+            gap: 5px;
+        } .image-grid {
+            display: Full Image;
+            grid-template-columns: repeat(auto-fit, minmax(800px, 1fr));
+            gap: 5px;
+        }
+     
+        /* Footer Styling */
+        footer {
+            background-color: #222;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .footer-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .footer-btn {
+            background-color: #2ed573;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: bold;
+            transition: opacity 0.3s;
+        }
+
+        .footer-btn:hover {
+            opacity: 0.9;
+        }
+
+        .insta-btn { background-color: #e1306c; } /* Instagram Color */
+        .review-btn { background-color: #1e90ff; } /* Review Color */
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <!-- '#' link lagane se ye Home button ki tarah page ke top par le jayega -->
+        <a href="#" class="menu-btn">MENU</a>
+    </header>
+
+    <!-- Body Section (Images) -->
+    <main>
+        <div class="image-grid">
+            <!-- Image 1 -->
+            <div class="image-card">
+                <img src="https://cdn.corenexis.com/f/xDk0KfsH68g.png" alt="Image 1">
+            </div>
+            <!-- Image 1 -->
+            <div class="image-card">
+                <img src="https://cdn.corenexis.com/f/xDk0KfsH68g.png" alt="Image 1">
+            </div>
+ <!-- Image 1 -->
+            <div class="image-card">
+                <img src="https://cdn.corenexis.com/f/xDk0KfsH68g.png" alt="Image 1">
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="footer-buttons">
+            <!-- Location Button with your Google Maps link -->
+            <a href="https://maps.app.goo.gl/p7nsDeURENFxp7Kp9" target="_blank" class="footer-btn">Location</a>
+            
+            <!-- Instagram Button (Yahan '#' ki jagah apni profile link daal sakte hain) -->
+            <a href="#" target="_blank" class="footer-btn insta-btn">Instagram</a>
+            
+            <!-- Review Button (Yahan '#' ki jagah apne review page ki link daal sakte hain) -->
+            <a href="#" target="_blank" class="footer-btn review-btn">Review</a>
+        </div>
+    </footer>
+
+</body>
+</html>
