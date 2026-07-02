@@ -1,0 +1,428 @@
+/* --- Global Reset & Variables --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg-color: #1a0b12;
+    --accent-gold: #dfb15b;
+    --text-light: #f5f0eb;
+    --text-muted: #bfaaa0;
+    --card-bg: #26141c;
+    
+    /* Icon Custom Color Palette (Matching Cafe Aesthetic) */
+    --call-color: #63cc82;     /* Subtle elegant green */
+    --nav-color: #52a5ff;      /* Sky map blue */
+    --insta-color: #ff527b;    /* Instagram pink/rose tone */
+    --review-color: #ffc83b;   /* Star golden yellow */
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-light);
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    /* Extra bottom spacing taaki lock footer menu text ko na chhupaye */
+    padding-bottom: 80px; 
+}
+
+/* --- Header & Temple Aesthetics --- */
+.menu-header {
+    text-align: center;
+    padding: 40px 15px;
+    background: linear-gradient(180deg, #11050a 0%, var(--bg-color) 100%);
+}
+
+.logo-container h1 {
+    font-family: 'Cinzel', serif;
+    font-size: 1.8rem;
+    color: var(--accent-gold);
+    letter-spacing: 4px;
+    margin: 10px 0 5px 0;
+}
+
+.subtitle {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: var(--text-muted);
+}
+
+.temple-icon {
+    font-size: 1.5rem;
+    color: var(--accent-gold);
+}
+
+.temple-border-top, .temple-border-bottom {
+    height: 2px;
+    max-width: 220px;
+    margin: 0 auto;
+    background: linear-gradient(90deg, transparent, var(--accent-gold), transparent);
+}
+
+/* --- Sticky Category Navigation --- */
+.category-nav {
+    position: sticky;
+    top: 0;
+    background-color: #11050a;
+    display: flex;
+    gap: 15px;
+    overflow-x: auto;
+    padding: 15px 20px;
+    border-top: 1px solid rgba(223, 177, 91, 0.2);
+    border-bottom: 1px solid rgba(223, 177, 91, 0.2);
+    z-index: 100;
+    scrollbar-width: none;
+}
+
+.category-nav::-webkit-scrollbar {
+    display: none;
+}
+
+.category-nav a {
+    color: var(--text-light);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+    white-space: nowrap;
+    padding: 6px 16px;
+    border: 1px solid transparent;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+}
+
+.category-nav a:hover {
+    color: var(--accent-gold);
+    border-color: var(--accent-gold);
+    background-color: rgba(223, 177, 91, 0.05);
+}
+
+/* --- Menu Grid Layout --- */
+.menu-container {
+    max-width: 1100px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+.menu-category {
+    margin-bottom: 50px;
+    scroll-margin-top: 80px;
+}
+
+.category-title {
+    font-family: 'Cinzel', serif;
+    font-size: 1.8rem;
+    color: var(--accent-gold);
+    border-bottom: 1px dashed rgba(223, 177, 91, 0.4);
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.size-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+    margin-bottom: 10px;
+    color: var(--accent-gold);
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.size-labels {
+    display: flex;
+    gap: 25px;
+    width: 110px;
+    justify-content: space-between;
+}
+
+.pizza-labels {
+    width: 170px;
+}
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    gap: 25px;
+}
+
+/* --- Menu Item Styling --- */
+.menu-item {
+    background-color: var(--card-bg);
+    padding: 20px;
+    border-radius: 8px;
+    border-left: 3px solid var(--accent-gold);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.menu-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(223, 177, 91, 0.1);
+}
+
+.item-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.item-name {
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--text-light);
+    letter-spacing: 0.5px;
+    padding-right: 15px;
+}
+
+.item-price {
+    font-family: 'Cinzel', serif;
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--accent-gold);
+    white-space: nowrap;
+}
+
+.multi-prices {
+    font-family: 'Cinzel', serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--accent-gold);
+    display: flex;
+    gap: 25px;
+    width: 110px;
+    justify-content: space-between;
+    white-space: nowrap;
+}
+
+.pizza-prices {
+    width: 170px;
+}
+
+.item-desc {
+    font-size: 0.88rem;
+    color: var(--text-muted);
+    font-weight: 300;
+}
+
+.space-buffer {
+    height: 40px;
+}
+
+/* --- LOCKED/FIXED ACTION FOOTER (New) --- */
+.action-footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    background-color: #11050a;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-top: 2px solid var(--accent-gold);
+    box-shadow: 0 -5px 25px rgba(0, 0, 0, 0.6);
+    z-index: 999; /* Page contents ke hamesha upar rahega */
+    padding: 0 10px;
+}
+
+.footer-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: var(--text-light);
+    font-size: 0.78rem;
+    font-weight: 400;
+    width: 22%;
+    height: 100%;
+    gap: 4px;
+    transition: background-color 0.2s ease;
+}
+
+/* Icons styling with unique custom color matches */
+.footer-btn i {
+    font-size: 1.35rem;
+    transition: transform 0.2s ease;
+}
+
+.icon-call { color: var(--call-color); }
+.icon-nav { color: var(--nav-color); }
+.icon-insta { color: var(--insta-color); }
+.icon-review { color: var(--review-color); }
+
+/* Click/Hover Effect */
+.footer-btn:active i, .footer-btn:hover i {
+    transform: scale(1.15);
+}
+
+/* --- Responsive Media Queries --- */
+@media (max-width: 768px) {
+    .logo-container h1 {
+        font-size: 2rem;
+    }
+    
+    .menu-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    .category-title {
+        font-size: 1.5rem;
+    }
+    
+    .size-header {
+        display: none;
+    }
+}
+/* --- FIXED BOTTOM NAVIGATION BAR --- */
+.action-footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    background-color: #11050a;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-top: 2px solid var(--accent-gold);
+    box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+
+.footer-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: var(--text-light);
+    font-size: 0.75rem;
+    width: 23%; /* Buttons ki width adjust ki */
+    height: 100%;
+    gap: 4px;
+}
+
+.footer-btn i {
+    font-size: 1.2rem;
+    transition: transform 0.2s ease;
+}
+
+/* Icons Colors */
+.icon-call { color: var(--call-color); }
+.icon-nav { color: var(--nav-color); }
+.icon-insta { color: var(--insta-color); }
+
+/* Special Styling for Order Now Button */
+.order-now-btn {
+    background: linear-gradient(135deg, #25d366 0%, #128c7e 100%); /* WhatsApp Green Theme */
+    color: #fff !important;
+    border-radius: 8px;
+    height: 52px; /* Thoda ucha aur dynamic dikhne ke liye */
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+    font-weight: 600;
+}
+
+.order-now-btn i {
+    color: #fff !important;
+    font-size: 1.3rem;
+}
+
+.footer-btn:active i, .footer-btn:hover i {
+    transform: scale(1.1);
+}
+/* --- Responsiveness for Mobile View --- */
+@media (max-width: 768px) {
+    .logo-container h1 { 
+        font-size: 1.6rem; 
+    }
+    
+    .menu-grid { 
+        grid-template-columns: 1fr; 
+    }
+    
+    /* Mobile par HALF FULL header ko hide karne ke bajay visible aur compact rakhenge */
+    .size-header { 
+        display: flex; 
+        font-size: 0.7rem;
+        padding: 5px 8px;
+    }
+    
+    .size-labels-2 {
+        width: 85px; /* Mobile par width thodi kam ki */
+        gap: 10px;
+    }
+
+    .multi-prices-2 {
+        width: 85px; /* Mobile par price spacing perfect rakhne ke liye */
+        font-size: 0.95rem;
+    }
+
+    .size-labels-4 {
+        width: 180px;
+        gap: 5px;
+    }
+
+    .multi-prices-4 {
+        width: 180px;
+        font-size: 0.9rem;
+    }
+}
+/* --- Responsiveness for Mobile View --- */
+@media (max-width: 768px) {
+    /* Header ki height aur padding ekdum kam kar di */
+    .menu-header {
+        padding: 10px 10px; 
+    }
+    
+    /* Trident Icon ko thoda aur chota kiya */
+    .temple-icon {
+        font-size: 1.1rem;
+    }
+
+    /* Main Title "ROYAL JUNCTION" ka size tight kar diya */
+    .logo-container h1 { 
+        font-size: 1.4rem; 
+        letter-spacing: 1px;
+        margin: 2px 0;
+    }
+    
+    /* Subtitle ko ekdum chota aur pass kiya */
+    .subtitle {
+        font-size: 0.65rem;
+        letter-spacing: 1px;
+    }
+    
+    /* Borders ki width bhi choti kar di */
+    .temple-border-top, .temple-border-bottom {
+        max-width: 140px;
+    }
+
+    /* --- Baaki pehle wale mobile rules --- */
+    .menu-grid { 
+        grid-template-columns: 1fr; 
+    }
+    
+    .size-header { 
+        display: flex; 
+        font-size: 0.7rem;
+        padding: 5px 8px;
+    }
+    
+    .size-labels-2, .multi-prices-2 {
+        width: 85px;
+        gap: 10px;
+    }
+
+    .size-labels-4, .multi-prices-4 {
+        width: 180px;
+        gap: 5px;
+    }
+}
